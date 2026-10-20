@@ -1,0 +1,52 @@
+<div id="__ROOT_ID__" class="ri-report" data-renderer="__RENDERER_VERSION__">
+  <header class="ri-brand">
+    <div class="ri-brand-name"><span class="ri-monogram" aria-hidden="true">RI</span><div><strong>Review Intelligence</strong><div class="ri-muted">Исследование Wildberries</div></div></div>
+    <span class="ri-status ri-positive">Разметка завершена</span>
+  </header>
+  <div class="ri-identity">
+    <p class="ri-eyebrow ri-muted" data-product-label>__PRODUCT_LABEL__</p>
+    <h1 data-name>__PRODUCT_NAME__</h1>
+    <p class="ri-muted">Частоты и подтверждения для выбранной области исследования</p>
+  </div>
+  <div class="ri-segments" aria-label="Область исследования">__AREA_BUTTONS__</div>
+  <div class="ri-stats">
+    <div class="ri-stat"><span class="ri-muted">Проанализировано</span><strong data-analyzed>__ANALYZED__</strong><span class="ri-muted">текстовых отзывов</span></div>
+    <div class="ri-stat"><span class="ri-muted">Получено записей</span><strong data-returned>__RETURNED__</strong><span class="ri-muted" data-empty>__EMPTY__ без текста</span></div>
+  </div>
+  <p class="ri-muted ri-small" data-period>__PERIOD__</p>
+  <details class="ri-scope" data-scope-details><summary class="cursor-interaction">Область исследования и полнота</summary><div data-scope>__SCOPE__</div></details>
+  <div class="ri-tabs" role="tablist" aria-label="Разделы отчёта">
+    <button type="button" disabled role="tab" class="ri-pill cursor-interaction" id="__ROOT_ID__-tab-overview" data-tab="overview" aria-controls="__ROOT_ID__-overview" aria-selected="true">Обзор</button>
+    <button type="button" disabled role="tab" class="ri-pill cursor-interaction" id="__ROOT_ID__-tab-themes" data-tab="themes" aria-controls="__ROOT_ID__-themes" aria-selected="false">Темы</button>
+    <button type="button" disabled role="tab" class="ri-pill cursor-interaction" id="__ROOT_ID__-tab-questions" data-tab="questions" aria-controls="__ROOT_ID__-questions" aria-selected="false">Вопросы</button>
+    <button type="button" disabled role="tab" class="ri-pill cursor-interaction" id="__ROOT_ID__-tab-opportunities" data-tab="opportunities" aria-controls="__ROOT_ID__-opportunities" aria-selected="false">Возможности</button>
+  </div>
+  <section id="__ROOT_ID__-overview" data-panel="overview" role="tabpanel" aria-labelledby="__ROOT_ID__-tab-overview">
+    <h2>Что важно для решения</h2><div data-summary><p>__SUMMARY__</p></div>
+    <div data-top-themes>__TOP_THEMES__</div>
+    <p class="ri-muted ri-small">Доли рассчитаны по всем текстовым отзывам выбранной области. Темы пересекаются и не должны складываться в 100%.</p>
+    <button type="button" disabled class="ri-action ri-main cursor-interaction" data-all-themes>Все темы и подтверждения →</button>
+  </section>
+  <section id="__ROOT_ID__-themes" data-panel="themes" role="tabpanel" aria-labelledby="__ROOT_ID__-tab-themes" hidden>
+    <div class="ri-section-title"><h2>Все темы</h2><span class="ri-muted ri-small" data-theme-count aria-live="polite"></span></div>
+    <div class="ri-segments" aria-label="Контекст темы">
+      <button type="button" class="ri-pill cursor-interaction" data-filter="all" aria-pressed="true">Все</button>
+      <button type="button" class="ri-pill cursor-interaction" data-filter="positive" aria-pressed="false">Хвалят</button>
+      <button type="button" class="ri-pill cursor-interaction" data-filter="negative" aria-pressed="false">Критикуют</button>
+    </div>
+    <label class="ri-search"><span class="ri-sr-only">Поиск по темам, цитатам и полным текстам</span><input type="search" class="ri-input" data-theme-search placeholder="Найти тему или слова в отзыве" autocomplete="off"></label>
+    <div data-themes class="ri-theme-list"></div>
+  </section>
+  <section id="__ROOT_ID__-questions" data-panel="questions" role="tabpanel" aria-labelledby="__ROOT_ID__-tab-questions" hidden>
+    <div class="ri-section-title"><h2>Вопросы покупателей</h2><span class="ri-muted ri-small" data-qa-count aria-live="polite"></span></div>
+    <label class="ri-search"><span class="ri-sr-only">Поиск по вопросам и ответам</span><input type="search" class="ri-input" data-qa-search placeholder="Найти вопрос или ответ" autocomplete="off"></label>
+    <p class="ri-muted ri-small">Ответ продавца — его утверждение, а не результат независимой проверки.</p>
+    <div data-questions></div><div class="ri-actions" data-qa-more></div>
+  </section>
+  <section id="__ROOT_ID__-opportunities" data-panel="opportunities" role="tabpanel" aria-labelledby="__ROOT_ID__-tab-opportunities" hidden>
+    <h2>Возможности предложения</h2><p class="ri-muted">Гипотезы для проверки, основанные на выявленных темах.</p><div data-opportunities></div>
+  </section>
+  <p data-startup class="ri-muted ri-small">Выше — сохранённый вывод. Интерактивные разделы станут доступны после запуска интерфейса.</p>
+  <p data-runtime-error hidden role="alert">Не удалось обновить интерфейс. Сохранённый вывод остаётся доступен; отчёт можно открыть повторно из сохранённого исследования.</p>
+  <footer class="ri-muted ri-small"><span data-footer>__FOOTER__</span></footer>
+</div>

@@ -1,0 +1,16 @@
+{
+  "name": "wb-review-intelligence",
+  "version": "1.3.0",
+  "description": "Анализ публичных отзывов Wildberries с проверяемыми цитатами, локальным хранением и интерактивным отчётом.",
+  "author": {
+    "name": "solyarikai"
+  },
+  "interface": {
+    "displayName": "WB Review Intelligence",
+    "shortDescription": "Анализ отзывов Wildberries с цитатами",
+    "longDescription": "Переносимый навык анализа публичных отзывов и Q&A Wildberries. Проверяемые частоты, сохранение в проекте и отчёт без привязки к аккаунту автора.",
+    "developerName": "solyarikai",
+    "category": "Productivity",
+    "capabilities": []
+  }
+}

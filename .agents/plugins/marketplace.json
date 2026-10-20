@@ -1,0 +1,20 @@
+{
+  "name": "wb-review-intelligence",
+  "interface": {
+    "displayName": "WB Review Intelligence"
+  },
+  "plugins": [
+    {
+      "name": "wb-review-intelligence",
+      "source": {
+        "source": "local",
+        "path": "./plugins/wb-review-intelligence"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

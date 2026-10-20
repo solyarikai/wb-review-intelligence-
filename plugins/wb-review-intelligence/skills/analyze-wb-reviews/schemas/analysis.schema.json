@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Complete review mapping and display data",
+  "type": "object",
+  "required": [
+    "review_status",
+    "observations"
+  ],
+  "properties": {
+    "review_status": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "review_id",
+          "status"
+        ],
+        "properties": {
+          "review_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "analyzed",
+              "pending"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "reviewed_fields": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "text",
+                "pros",
+                "cons"
+              ]
+            },
+            "uniqueItems": true
+          },
+          "record_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "no_theme_reason": {
+            "type": "string"
+          },
+          "scope_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "additionalProperties": true,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "status": {
+                  "const": "analyzed"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "reviewed_fields",
+                "record_sha256",
+                "scope_sha256"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "area",
+          "theme_id",
+          "context",
+          "review_id"
+        ],
+        "properties": {
+          "area": {
+            "enum": [
+              "article",
+              "group"
+            ]
+          },
+          "theme_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "context": {
+            "enum": [
+              "positive",
+              "negative",
+              "neutral"
+            ]
+          },
+          "review_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_field": {
+            "enum": [
+              "text",
+              "pros",
+              "cons"
+            ]
+          },
+          "excerpt": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "REPORT_DATA": {
+      "$ref": "report.schema.json"
+    }
+  },
+  "additionalProperties": true
+}

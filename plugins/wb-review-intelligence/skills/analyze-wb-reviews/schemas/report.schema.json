@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REPORT_DATA version 1",
+  "type": "object",
+  "required": [
+    "version",
+    "report_id",
+    "areas"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "report_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "product": {
+      "type": "object"
+    },
+    "areas": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "enum": [
+          "article",
+          "group"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "metrics",
+          "themes",
+          "quotes",
+          "questions",
+          "opportunities"
+        ],
+        "properties": {
+          "product": {
+            "type": "object"
+          },
+          "scope": {
+            "type": "object"
+          },
+          "dates": {
+            "type": "object"
+          },
+          "metrics": {
+            "type": "object",
+            "required": [
+              "returned",
+              "text",
+              "empty",
+              "analyzed"
+            ],
+            "properties": {
+              "returned": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "text": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "empty": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              },
+              "analyzed": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0
+              }
+            },
+            "additionalProperties": true
+          },
+          "summary": {
+            "type": "string"
+          },
+          "themes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "context",
+                "count",
+                "quote_ids",
+                "evidence_status"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "context": {
+                  "enum": [
+                    "positive",
+                    "negative",
+                    "neutral"
+                  ]
+                },
+                "count": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "denominator": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "quote_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "uniqueItems": true
+                },
+                "evidence_status": {
+                  "enum": [
+                    "complete",
+                    "partial"
+                  ]
+                },
+                "evidence_reason": {
+                  "type": "string"
+                },
+                "important": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "quotes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "review_id",
+                "field",
+                "text",
+                "full_field_text",
+                "product_id",
+                "date"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "review_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "field": {
+                  "enum": [
+                    "text",
+                    "pros",
+                    "cons"
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "full_field_text": {
+                  "type": "string"
+                },
+                "product_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "date": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "question"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "question": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": [
+                      "text",
+                      "role"
+                    ],
+                    "properties": {
+                      "text": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "role": {
+                        "enum": [
+                          "seller",
+                          "buyer",
+                          "platform",
+                          "unknown"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
+          },
+          "opportunities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "title",
+                "theme_ids"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "theme_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

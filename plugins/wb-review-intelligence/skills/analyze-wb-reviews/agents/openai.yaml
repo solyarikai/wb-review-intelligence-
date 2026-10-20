@@ -1,0 +1,6 @@
+interface:
+  display_name: WB Review Intelligence
+  short_description: Анализ отзывов Wildberries
+  default_prompt: Проанализируй товар Wildberries и покажи отчёт прямо в ответе.
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,165 @@
+{
+  "review_status": [
+    {
+      "review_id": "R-SYN-1",
+      "status": "analyzed",
+      "record_sha256": "e8775b403aa25a05f379162a6bfdd9ecf47894b9ff7f48983ca25a7364a93287",
+      "reviewed_fields": [
+        "text"
+      ],
+      "scope_sha256": "71873a3ebdbd65b65c67bec62b2999ceffbc79f0157efbfe3f071c05f5bd3ee7"
+    },
+    {
+      "review_id": "R-SYN-2",
+      "status": "analyzed",
+      "record_sha256": "20c608c5550741f7a21d2417377ce044481e7c72464bf28d79a5006c59657623",
+      "reviewed_fields": [
+        "text"
+      ],
+      "scope_sha256": "71873a3ebdbd65b65c67bec62b2999ceffbc79f0157efbfe3f071c05f5bd3ee7"
+    }
+  ],
+  "observations": [
+    {
+      "area": "article",
+      "theme_id": "weak",
+      "context": "negative",
+      "review_id": "R-SYN-1",
+      "source_field": "text",
+      "excerpt": "Свет слабый"
+    },
+    {
+      "area": "group",
+      "theme_id": "weak",
+      "context": "negative",
+      "review_id": "R-SYN-1",
+      "source_field": "text",
+      "excerpt": "Свет слабый"
+    },
+    {
+      "area": "group",
+      "theme_id": "bright",
+      "context": "positive",
+      "review_id": "R-SYN-2",
+      "source_field": "text",
+      "excerpt": "Свет яркий"
+    }
+  ],
+  "REPORT_DATA": {
+    "version": 1,
+    "report_id": "RUN-SYN",
+    "product": {
+      "id": "9001"
+    },
+    "areas": {
+      "article": {
+        "product": {
+          "id": "9001"
+        },
+        "scope": {
+          "label": "article"
+        },
+        "dates": {},
+        "metrics": {
+          "returned": 2,
+          "text": 1,
+          "empty": 1,
+          "analyzed": 1
+        },
+        "summary": "Синтетическая проверка",
+        "themes": [
+          {
+            "id": "weak",
+            "title": "Слабый свет",
+            "context": "negative",
+            "count": 1,
+            "denominator": 1,
+            "quote_ids": [
+              "Q-SYN-1"
+            ],
+            "evidence_status": "complete"
+          }
+        ],
+        "quotes": [
+          {
+            "id": "Q-SYN-1",
+            "review_id": "R-SYN-1",
+            "field": "text",
+            "text": "Свет слабый",
+            "full_field_text": "Свет слабый",
+            "product_id": "9001",
+            "date": "2026-01-01"
+          }
+        ],
+        "questions": [],
+        "opportunities": []
+      },
+      "group": {
+        "product": {
+          "id": "9001"
+        },
+        "scope": {
+          "label": "group",
+          "product_ids": [
+            "9001",
+            "9002"
+          ]
+        },
+        "dates": {},
+        "metrics": {
+          "returned": 3,
+          "text": 2,
+          "empty": 1,
+          "analyzed": 2
+        },
+        "summary": "Синтетическая проверка",
+        "themes": [
+          {
+            "id": "weak",
+            "title": "Слабый свет",
+            "context": "negative",
+            "count": 1,
+            "denominator": 2,
+            "quote_ids": [
+              "Q-SYN-1"
+            ],
+            "evidence_status": "complete"
+          },
+          {
+            "id": "bright",
+            "title": "Яркий свет",
+            "context": "positive",
+            "count": 1,
+            "denominator": 2,
+            "quote_ids": [
+              "Q-SYN-2"
+            ],
+            "evidence_status": "complete"
+          }
+        ],
+        "quotes": [
+          {
+            "id": "Q-SYN-1",
+            "review_id": "R-SYN-1",
+            "field": "text",
+            "text": "Свет слабый",
+            "full_field_text": "Свет слабый",
+            "product_id": "9001",
+            "date": "2026-01-01"
+          },
+          {
+            "id": "Q-SYN-2",
+            "review_id": "R-SYN-2",
+            "field": "text",
+            "text": "Свет яркий",
+            "full_field_text": "Свет яркий",
+            "product_id": "9002",
+            "date": "2026-01-02"
+          }
+        ],
+        "questions": [],
+        "opportunities": []
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "run_id": "RUN-SYN",
+  "source_coverage": {
+    "article": {
+      "product_id": "9001",
+      "expected_returned": 2,
+      "expected_text": 1,
+      "exhausted": true,
+      "basis": "SYNTHETIC TEST ONLY: all fixture records",
+      "observed_at": "2026-01-03"
+    },
+    "group": {
+      "product_ids": [
+        "9001",
+        "9002"
+      ],
+      "expected_returned": 3,
+      "expected_text": 2,
+      "exhausted": true,
+      "basis": "SYNTHETIC TEST ONLY: all fixture records",
+      "observed_at": "2026-01-03"
+    }
+  },
+  "analysis_status": "complete",
+  "evidence_status": "complete",
+  "ui_status": "not_verified",
+  "pending_IDs": [],
+  "limitations": [
+    "Synthetic fixture; not a WB review"
+  ],
+  "execution": {
+    "version": 1,
+    "requested_areas": [
+      "article",
+      "group"
+    ]
+  }
+}
